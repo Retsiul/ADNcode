@@ -1,0 +1,75 @@
+@use '../variables';
+
+.infos-bar {
+    padding: 16px 24px;
+    background: variables.$blue1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: variables.$textColor;
+
+    &__infos {
+        display: flex;
+        gap: 40px;
+        text-align: center;
+
+
+        &__item {
+            font-size: 18px;
+            background-image: linear-gradient(variables.$blue2, variables.$blue1);
+            box-shadow: 0 0 10px 1px variables.$secondaryTextColor;
+            transition: all .4s ease;
+            text-align: center;
+            line-height: 30px;
+            width: 200px;
+            padding: 20px;
+            border-radius: 8px;
+
+            b {
+
+                font-size: 18px;
+                display: block;
+            }
+
+
+
+        }
+
+
+    }
+     &__mobile {
+           display: none;
+        }
+    @media (max-width:624px) {
+        display: block;
+
+        .infos-bar__mobile {
+            text-align: center;
+            line-height: 30px;
+            display: block;
+        }
+
+        .infos-bar__infos {
+            display: none;
+        }
+
+
+    }
+
+    @media (max-width:1024px) {
+        &__infos {
+            gap: 16px;
+        }
+
+         .infos-bar__mobile {
+            text-align: center;
+            line-height: 50px;
+            display: block;
+            font-size: 24px;
+        }
+         .infos-bar__infos {
+            display: none;
+        }
+    }
+}
